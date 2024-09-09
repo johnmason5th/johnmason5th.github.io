@@ -1,0 +1,16 @@
+==To Add==
+-Pipette
+-Resizing Canvas
+-Undo (Will have to restructure a lot)
+-Types/Styles of brushes? (pastel,watercolor,paint,etc)
+-Fill Tool
+-Select and move tool
+-Better color tool, a color wheel and brightness bar
+-Saving and loading canvases (might just need to do it by saving text on a text file and then copy pasting it to load. Or just screenshot and then upload picture to program.)
+-Animating the world (particles,animated paint[running water, rustling leaves,clouds], gif-like system, npcs?, stickers system, )
+-Ability to paint a texture (brick wall image, grass image, rock image, etc)
+
+==Added==
+-Drawing 5/16/23
+-Color Tool 5/16/23
+-Resizing Brush 5/16/23

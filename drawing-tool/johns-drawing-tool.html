@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Drawing Tool  |  The John K Mason Website</title>
+	<link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #404040;
+        color: white;
+      }
+    }
+		.mainmenu {
+			border: 5px outset blue;
+			background-color: white;
+			text-align: center;
+		}
+  </style>
+</head>
+<body id="body">
+	<div class="mainmenu">
+		<a href="../index.html">Home</a><br>
+		<a href="../powder-physics-sim/johns-powder-physics-sim.html">Powder Physics Sim</a><br>
+		<a href="../drawing-tool/johns-drawing-tool.html">Drawing Tool</a>
+	</div>
+  <h3 style="display:inline">John's Drawing Tool</h3><br>
+  <canvas id="canvas" width="450" height="450" style="border:1px solid;"></canvas>
+  <script>
+    canvas.oncontextmenu = function (e) {
+      e.preventDefault();
+    };
+		canvas.onscroll = function (e) {
+      e.preventDefault();
+    };
+    canvas.onselectstart = function () { return false; }
+  </script>
+  <!-- <p style="display:inline" id="particle-info"></p> -->
+  <!-- <br> -->
+  <!-- <p style="display:inline" id="fps">FPS: ?</p><br> -->
+  <!-- <button id="pause-toggle-button" onclick="pauseToggler()">Pause/Resume</button><br> -->
+  <script>
+    let pauseToggle = false;
+    function pauseToggler() {
+      if (pauseToggle) {
+        timer.resume();
+        pauseToggle=false;
+      } else {
+        timer.pause();
+        pauseToggle=true;
+      }
+    }
+  </script>
+  <div>
+		<label for="red">Red</label><br>
+		<input type="range" min="0" max="255" value="0" class="slider" id="red" oninput="setRed(this.value)"><br>
+		<label for="green">Green</label><br>
+		<input type="range" min="0" max="255" value="0" class="slider" id="green" oninput="setGreen(this.value)"><br>
+		<label for="blue">Blue</label><br>
+		<input type="range" min="0" max="255" value="0" class="slider" id="blue" oninput="setBlue(this.value)"><br>
+		<canvas id="colorDisplay" width="50" height="50"></canvas><br><br>
+		<label for="brushSize">Brush Size</label><br>
+		<input type="range" min="3" max="50" value="10" class="slider" id="brushSize" oninput="setBrushSize(this.value)"><br>
+		
+  </div>
+		<!-- <br><button id="clear-debug-btn" onclick="document.getElementById('debug-display').innerHTML= ''; -->
+<!-- ">Clear Debug</button><br> -->
+    <!-- <p>Debug:</p> -->
+    <!-- <p id="debug-display"></p> -->
+  <script src="mylibrary.js"></script>
+  <script src="user-input.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

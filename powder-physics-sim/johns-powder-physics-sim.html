@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Powder Physics Sim  |  The John K Mason Website</title>
+	<link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #404040;
+        color: white;
+      }
+    }
+		.mainmenu {
+			border: 5px outset blue;
+			background-color: white;
+			text-align: center;
+		}
+  </style>
+</head>
+
+<body id="body">
+	<div class="mainmenu">
+		<a href="../index.html">Home</a><br>
+		<a href="../powder-physics-sim/johns-powder-physics-sim.html">Powder Physics Sim</a><br>
+		<a href="../drawing-tool/johns-drawing-tool.html">Drawing Tool</a>
+	</div>
+	
+  <h3 style="display:inline">John's Powder Physics Sim</h3><br>
+	
+	<div style="display: flex; height:80vh;">
+		<div style="width: 40%;">
+			<canvas id="canvas" width="300px" height="300px" style="width:100%; aspect-ratio: 1/1; border:1px solid;"></canvas>
+			<script>
+				canvas.oncontextmenu = function (e) {
+					e.preventDefault();
+				};
+				canvas.onselectstart = function () { return false; }
+			</script>
+		</div>
+		
+		<div style="margin-left: 20px; flex-grow: 1;">
+			<p style="display:inline">Particle Info: 
+				<span id="particle-info"></span>
+			</p><br>
+			<p style="display:inline" id="fps">FPS: ?</p><br>
+			<button id="pause-toggle-button" onclick="pauseToggler()">Pause/Resume</button><br>
+			<script>
+				let pauseToggle = false;
+				function pauseToggler() {
+					if (pauseToggle) {
+						timer.resume();
+						pauseToggle=false;
+					} else {
+						timer.pause();
+						pauseToggle=true;
+					}
+				}
+			</script>
+			
+			<div>
+				<p style="display:inline">Draw:</p>
+				<input type="radio" id="powderRadio" name="input" checked="checked" onclick="setCursorMode('draw');setDrawParticle('dust');">
+				<label for="powderRadio">Dust</label>
+				<input type="radio" id="waterRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('water');">
+				<label for="waterRadio">Water</label>
+				<input type="radio" id="steamRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('steam');">
+				<label for="steamRadio">Steam</label>
+				<input type="radio" id="iceRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('ice');">
+				<label for="iceRadio">Ice</label>
+				<input type="radio" id="saltwaterRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('saltwater');">
+				<label for="saltwaterRadio">Saltwater</label>
+				<input type="radio" id="saltRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('salt');">
+				<label for="saltRadio">Salt</label>
+				<!-- <input type="radio" id="fireRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('fire');"> -->
+				<!-- <label for="fireRadio">Fire</label> -->
+				<br>
+				<input type="radio" id="fishRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('fish');">
+				<label for="fishRadio">Fish</label>
+				<!-- <input type="radio" id="birdRadio" name="input" onclick="setCursorMode('draw');setDrawParticle('bird');"> -->
+				<!-- <label for="birdRadio">Bird</label> -->
+				<br>
+				<input type="radio" id="eraseRadio" name="input" onclick="setCursorMode('erase')">
+				<label for="eraseRadio">Erase</label><br>
+				
+				<p style="display:inline">Temp Tool:</p>
+				<input type="radio" id="heatRadio" name="input" onclick="setCursorMode('temp');setTempMode('heat');">
+				<label for="heatRadio">Heat</label>
+				<input type="radio" id="coolRadio" name="input" onclick="setCursorMode('temp');setTempMode('cool');">
+				<label for="coolRadio">Cool</label><br>
+				
+				<p style="display:inline">Size:</p>
+				<input type="range" min="1" max="30" value="1" class="slider" id="myRange" oninput="setCursorSize(this.value)"><br>
+				
+				<!-- <p style="display:inline" id="step"></p> -->
+				<!-- <p style="display:inline" id="steps ps"></p><br><br> -->
+				<!-- <button id="clear-debug-btn" onclick="document.getElementById('debug-display').innerHTML= ''; -->
+		<!-- ">Clear Debug</button><br> -->
+				<!-- <p id="debug-display"></p> -->
+				<!-- <p>Debug:</p> -->
+			</div>
+		</div>
+	</div>
+  <script src="mylibrary.js"></script>
+  <script src="particletypes.js"></script>
+  <script src="particles.js"></script>
+  <script src="cell.js"></script>
+  <script src="world.js"></script>
+  <script src="user-input.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
