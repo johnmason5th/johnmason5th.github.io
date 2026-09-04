@@ -1,0 +1,47 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202020;
+    color: white;
+  }
+  ul {
+    background-color: #333333;
+  }
+  ul li a {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  ul {
+    background-color: #cccccc;
+  }
+  ul li a {
+    color: black;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p, img {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul li a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}

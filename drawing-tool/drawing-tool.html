@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Drawing Tool  |  The John K Mason Website</title>
-	<link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <style>
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #404040;
-        color: white;
-      }
-    }
-		.mainmenu {
-			border: 5px outset blue;
-			background-color: white;
-			text-align: center;
-		}
-  </style>
+<title>Drawing Tool | John K Mason</title>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../site-style.css" rel="stylesheet">
 </head>
+
 <body id="body">
+  <ul>
+		<li><a href="../index.html">About</a></li>
+		<li><a href="../web-toys.html">Web Toys</a></li>
+		<li><a href="../contacts.html">Contact</a></li>
+	</ul>
+
 	<div class="mainmenu">
-		<a href="../index.html">Home</a><br>
-		<a href="../powder-physics-sim/johns-powder-physics-sim.html">Powder Physics Sim</a><br>
-		<a href="../drawing-tool/johns-drawing-tool.html">Drawing Tool</a><br>
-		<a href="../wheeled-robot-project/wheeled-robot-project.html">Simple Robot Project</a>
-	</div>
-  <h3 style="display:inline">John's Drawing Tool</h3><br>
+		<a href="../web-toys.html">Web Toys</a>
+		<a href="../powder-physics-sim/powder-physics-sim.html">Powder Physics Sim</a>
+		<a href="../drawing-tool/drawing-tool.html">Drawing Tool</a>
+	</div><br>
+
+  <h3 style="display:inline">Drawing Tool</h3><br>
   <canvas id="canvas" width="450" height="450" style="border:1px solid;"></canvas>
   <script>
     canvas.oncontextmenu = function (e) {
